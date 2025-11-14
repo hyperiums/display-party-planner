@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mickey’s Very Merry Christmas Party – Family Wish List</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 1.5rem;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.5;
+    }
+    h1, h2, h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .field-group {
+      margin-bottom: 0.6rem;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 0.4rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+    }
+    .inline-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      margin-top: 0.2rem;
+    }
+    .inline-options label {
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0;
+    }
+    .rating-row {
+      border-top: 1px solid #eee;
+      padding-top: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .rating-row:first-of-type {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .rating-title {
+      font-weight: 600;
+    }
+    .rating-description {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0.15rem 0 0.25rem;
+    }
+    .rating-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .rating-controls select {
+      width: auto;
+      min-width: 130px;
+    }
+    .rating-label-scale {
+      font-size: 0.8rem;
+      color: #555;
+    }
+    button {
+      cursor: pointer;
+      border-radius: 999px;
+      border: none;
+      padding: 0.6rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: #1a73e8;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(17, 87, 181, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    button:hover {
+      background: #155ec0;
+    }
+    #summary {
+      width: 100%;
+      min-height: 220px;
+      margin-top: 0.5rem;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.9rem;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: #555;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      margin-left: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mickey’s Very Merry Christmas Party 2025 – Family Wish List</h1>
+
+  <div class="card">
+    <p>
+      Fill this out so we can figure out what everyone most wants to do
+      during the party. When you’re done, click
+      <strong>“Generate Summary”</strong> and send the text to Dad.
+    </p>
+  </div>
+
+  <!-- BASIC INFO -->
+  <div class="card">
+    <h2>About You</h2>
+    <div class="field-group">
+      <label for="name">Your name</label>
+      <input type="text" id="name" placeholder="Chad, Mom, etc." />
+    </div>
+    <div class="field-group">
+      <label for="age">Age (optional)</label>
+      <input type="number" id="age" min="0" max="120" />
+    </div>
+
+    <div class="field-group">
+      <label>How late are you OK staying?</label>
+      <div class="inline-options">
+        <label><input type="radio" name="stayLate" value="Leave by 9:30 pm" /> Leave by 9:30 pm</label>
+        <label><input type="radio" name="stayLate" value="Stay until ~10:30 pm" /> Stay until ~10:30 pm</label>
+        <label><input type="radio" name="stayLate" value="Stay until midnight (with rest)" /> Stay until midnight (with rest)</label>
+        <label><input type="radio" name="stayLate" value="I can go the whole party" /> I can go the whole party</label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>How long are you comfortable waiting in ONE line for something you really want?</label>
+      <div class="inline-options">
+        <label><input type="radio" name="maxWait" value="Up to 15 minutes" /> Up to 15 minutes</label>
+        <label><input type="radio" name="maxWait" value="Up to 30 minutes" /> Up to 30 minutes</label>
+        <label><input type="radio" name="maxWait" value="Up to 45 minutes" /> Up to 45 minutes</label>
+        <label><input type="radio" name="maxWait" value="Up to 60+ minutes" /> Up to 60+ minutes</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIG SHOWS -->
+  <div class="card">
+    <h2>Big Shows & Nighttime Spectaculars</h2>
+    <p class="note">For each thing, choose how important it is to you.<br>
+      1 = Don’t care, 3 = Nice if it fits, 5 = MUST DO
+    </p>
+
+    <div class="rating-row rating-item" data-id="shows_fireworks">
+      <div class="rating-title">
+        Minnie’s Wonderful Christmastime Fireworks
+        <span class="badge">10:00 pm</span>
+      </div>
+      <div class="rating-description">
+        Holiday fireworks over Cinderella Castle with Christmas music and projections.
+        Usually need to be in place ~20–30 minutes early.
+      </div>
+      <div class="rating-controls">
+        <label>
+          Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="shows_parade">
+      <div class="rating-title">
+        Mickey’s Once Upon a Christmastime Parade
+        <span class="badge">8:30 & 11:00 pm</span>
+      </div>
+      <div class="rating-description">
+        Christmas parade with toy soldiers, gingerbread, Disney characters and Santa.
+        30–60 minutes waiting if we want a front-row spot.
+      </div>
+      <div class="rating-controls">
+        <label>
+          Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="shows_most_merriest">
+      <div class="rating-title">
+        Mickey’s Most Merriest Celebration (Castle Stage Show)
+      </div>
+      <div class="rating-description">
+        Music and dancing with Mickey, Minnie and friends on the castle stage. A few showtimes.
+      </div>
+      <div class="rating-controls">
+        <label>
+          Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="shows_frozen">
+      <div class="rating-title">
+        Frozen Holiday Surprise (Castle Lighting)
+      </div>
+      <div class="rating-description">
+        Short “Frozen” show where Elsa lights the castle in icy lights.
+      </div>
+      <div class="rating-controls">
+        <label>
+          Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="shows_snowfall">
+      <div class="rating-title">
+        Snowfall on Main Street, U.S.A.
+      </div>
+      <div class="rating-description">
+        “Snow” on Main Street at times during the night; no line, just atmosphere.
+      </div>
+      <div class="rating-controls">
+        <label>
+          Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARACTERS -->
+  <div class="card">
+    <h2>Characters & Photos</h2>
+    <p class="note">Again, 1 = Don’t care, 3 = Nice if it fits, 5 = MUST DO.</p>
+
+    <!-- I’ll include a good subset so this stays readable; you can add/remove items easily. -->
+
+    <h3>Super Popular / Long-Line Characters</h3>
+
+    <div class="rating-row rating-item" data-id="char_jack_sally">
+      <div class="rating-title">Jack Skellington & Sally (very long line)</div>
+      <div class="rating-description">
+        Nightmare Before Christmas duo. Often 1.5–3 hour waits if we don’t line up early.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_santa">
+      <div class="rating-title">Santa Claus – Santa’s Christmas Carnival</div>
+      <div class="rating-description">
+        Meet Santa in a North Pole-style tent in Storybook Circus. Often 30–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_pooh_group">
+      <div class="rating-title">Pooh, Tigger, Piglet & Eeyore (all four together)</div>
+      <div class="rating-description">
+        Hundred Acre Wood friends in winter scarves by the Pooh ride. Often ~45–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_ariel_eric">
+      <div class="rating-title">Ariel & Prince Eric</div>
+      <div class="rating-description">
+        Ariel in her green dress with rare Prince Eric. Often 45–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_belle_xmas">
+      <div class="rating-title">Belle in her Christmas gown</div>
+      <div class="rating-description">
+        Belle in a special maroon winter dress at Maurice’s cottage. ~30–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_mirabel_bruno">
+      <div class="rating-title">Mirabel & Bruno (Encanto)</div>
+      <div class="rating-description">
+        Mirabel with Bruno at Fairytale Garden. ~20–40 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <h3>Other Princesses & Royals</h3>
+
+    <div class="rating-row rating-item" data-id="char_anna_elsa">
+      <div class="rating-title">Anna & Elsa</div>
+      <div class="rating-description">
+        Inside Princess Fairytale Hall in winter outfits. ~20–45 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_cindy_charming">
+      <div class="rating-title">Cinderella & Prince Charming</div>
+      <div class="rating-description">
+        In Princess Fairytale Hall. ~20–40 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_rapunzel_flynn">
+      <div class="rating-title">Rapunzel & Flynn Rider</div>
+      <div class="rating-description">
+        In Princess Fairytale Hall. ~20–40 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_snow_aurora_princes">
+      <div class="rating-title">Snow White & Prince / Aurora & Prince Phillip</div>
+      <div class="rating-description">
+        One line for two royal couples near the castle wall. ~20–40 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <h3>Classic & Other Characters</h3>
+
+    <div class="rating-row rating-item" data-id="char_mickey_minnie">
+      <div class="rating-title">Mickey & Minnie in holiday outfits</div>
+      <div class="rating-description">
+        Town Square Theater, indoors. 15–60 minutes depending on time.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_silly_sideshow">
+      <div class="rating-title">Minnie, Daisy, Donald & Scrooge (one line)</div>
+      <div class="rating-description">
+        Storybook Circus indoor meet. One line for four characters. ~30–45 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_moana">
+      <div class="rating-title">Moana</div>
+      <div class="rating-description">
+        Near Tiki Room in Adventureland. ~20–40 minutes (shorter late).
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_aladdin_group">
+      <div class="rating-title">Aladdin / Abu / Jasmine / Genie (rotating pairs)</div>
+      <div class="rating-description">
+        Adventureland meet where pairs rotate. ~30–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_stitch">
+      <div class="rating-title">Stitch in a holiday shirt</div>
+      <div class="rating-description">
+        Tomorrowland. ~20–45 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_tiana_naveen">
+      <div class="rating-title">Tiana & Naveen</div>
+      <div class="rating-description">
+        Liberty Square gazebo. ~20–40 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_wonderland">
+      <div class="rating-title">Alice / White Rabbit / Tweedles</div>
+      <div class="rating-description">
+        Wonderland characters near Mad Tea Party. ~20–60 minutes.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="char_roaming">
+      <div class="rating-title">Roaming characters (Santa Goofy, Country Bears, etc.)</div>
+      <div class="rating-description">
+        Characters you might bump into for quick photos. Usually no real line.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Your TOP 3 characters (in order)</label>
+      <textarea id="topCharacters" rows="3" placeholder="Example: 1) Santa  2) Ariel & Eric  3) Stitch"></textarea>
+    </div>
+  </div>
+
+  <!-- DANCE PARTIES & CHILL STUFF -->
+  <div class="card">
+    <h2>Dance Parties & Low-Line Fun</h2>
+
+    <div class="rating-row rating-item" data-id="fun_club_tinsel">
+      <div class="rating-title">Club Tinsel Dance Party (Tomorrowland)</div>
+      <div class="rating-description">
+        Outdoor dance party with DJ and characters. No wait; just jump in.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="fun_disney_junior">
+      <div class="rating-title">Disney Junior Jingle Jam (Cosmic Ray’s, indoors)</div>
+      <div class="rating-description">
+        Indoor dance party for younger kids with Disney Junior characters.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="fun_exploring">
+      <div class="rating-title">Just walking around enjoying lights, music, and “snow”</div>
+      <div class="rating-description">
+        Time to explore, look at decorations, and take casual photos without rushing.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREATS & MERCH -->
+  <div class="card">
+    <h2>Treats, Food & Merch</h2>
+
+    <div class="rating-row rating-item" data-id="treats_free">
+      <div class="rating-title">Free cookies & hot cocoa stations</div>
+      <div class="rating-description">
+        Complimentary cookies and hot chocolate for party guests.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="treats_special">
+      <div class="rating-title">Special party-only snacks</div>
+      <div class="rating-description">
+        Limited-time Christmas foods (cupcakes, sandwiches, specialty drinks).
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Snacks compared to rides/shows</label>
+      <div class="inline-options">
+        <label><input type="radio" name="snackPriority" value="Prefer shows/characters over snacks" /> Prefer shows/characters over snacks</label>
+        <label><input type="radio" name="snackPriority" value="Want one or two special snacks" /> Want one or two special snacks</label>
+        <label><input type="radio" name="snackPriority" value="Snacks are a big part of the fun" /> Snacks are a big part of the fun</label>
+      </div>
+    </div>
+
+    <div class="rating-row rating-item" data-id="merch">
+      <div class="rating-title">Party-exclusive merchandise</div>
+      <div class="rating-description">
+        Special shirts, pins, ornaments and more only sold during the party.
+      </div>
+      <div class="rating-controls">
+        <label>Importance:
+          <select>
+            <option value="">(select)</option>
+            <option>1 - Don’t care</option>
+            <option>2</option>
+            <option>3 - Nice if it fits</option>
+            <option>4</option>
+            <option>5 - MUST DO</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>How much time are you OK spending shopping?</label>
+      <div class="inline-options">
+        <label><input type="radio" name="shoppingTime" value="Just a quick grab if we see something" /> Just a quick grab if we see something</label>
+        <label><input type="radio" name="shoppingTime" value="Up to 20–30 minutes browsing" /> Up to 20–30 minutes browsing</label>
+        <label><input type="radio" name="shoppingTime" value="Happy to spend a lot of time shopping" /> Happy to spend a lot of time shopping</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITIES & RIDES -->
+  <div class="card">
+    <h2>Big Picture Priorities</h2>
+
+    <div class="field-group">
+      <label>If we have to choose, what’s your priority order?</label>
+      <div class="inline-options">
+        <label><input type="radio" name="priorityOrder" value="1) Characters, 2) Shows/Fireworks, 3) Rides" /> Characters → Shows → Rides</label>
+        <label><input type="radio" name="priorityOrder" value="1) Shows/Fireworks, 2) Rides, 3) Characters" /> Shows → Rides → Characters</label>
+        <label><input type="radio" name="priorityOrder" value="1) Rides, 2) Characters, 3) Shows/Fireworks" /> Rides → Characters → Shows</label>
+        <label><input type="radio" name="priorityOrder" value="No strong preference" /> I don’t care – group decides</label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Specific rides you really want to do during the party (or 4–7 pm)</label>
+      <textarea id="rides" rows="3" placeholder="Example: Seven Dwarfs Mine Train, Big Thunder, Jingle Cruise, etc."></textarea>
+    </div>
+
+    <div class="field-group">
+      <label>Anything that is a hard NO for you? (too scary, too late, too much waiting, etc.)</label>
+      <textarea id="hardNos" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="card">
+    <h2>Send This Back to Dad</h2>
+    <p class="note">
+      When you’re done, click the button. It will create a text summary you can copy and paste into a message or email.
+    </p>
+    <button id="generateSummary">📝 Generate Summary</button>
+    <textarea id="summary" placeholder="Your summary will appear here. Select all, copy, and send."></textarea>
+  </div>
+
+  <script>
+    function getSelectedRadio(name) {
+      const el = document.querySelector('input[name="' + name + '"]:checked');
+      return el ? el.value : "";
+    }
+
+    document.getElementById("generateSummary").addEventListener("click", function () {
+      const name = document.getElementById("name").value.trim() || "Unknown";
+      const age = document.getElementById("age").value.trim();
+      const stayLate = getSelectedRadio("stayLate");
+      const maxWait = getSelectedRadio("maxWait");
+      const snackPriority = getSelectedRadio("snackPriority");
+      const shoppingTime = getSelectedRadio("shoppingTime");
+      const priorityOrder = getSelectedRadio("priorityOrder");
+      const rides = document.getElementById("rides").value.trim();
+      const hardNos = document.getElementById("hardNos").value.trim();
+      const topChars = document.getElementById("topCharacters").value.trim();
+
+      // Collect all rating items
+      const ratingItems = document.querySelectorAll(".rating-item");
+      const ratings = [];
+      ratingItems.forEach((item) => {
+        const titleEl = item.querySelector(".rating-title");
+        const select = item.querySelector("select");
+        if (!titleEl || !select) return;
+        const title = titleEl.textContent.trim();
+        const value = select.value;
+        if (value) {
+          ratings.push(title + " = " + value);
+        }
+      });
+
+      let text = "";
+      text += "MVMCP 2025 Survey – " + name + "\n";
+      if (age) text += "Age: " + age + "\n";
+      text += "\n";
+
+      text += "Stay late until: " + (stayLate || "Not specified") + "\n";
+      text += "Max wait for one thing: " + (maxWait || "Not specified") + "\n";
+      text += "\n";
+
+      text += "=== Activity Importance (1–5) ===\n";
+      if (ratings.length === 0) {
+        text += "(No ratings selected)\n";
+      } else {
+        ratings.forEach((r) => {
+          text += "- " + r + "\n";
+        });
+      }
+      text += "\n";
+
+      text += "Top 3 characters:\n";
+      text += topChars ? topChars + "\n" : "(Not specified)\n";
+      text += "\n";
+
+      text += "Snacks vs shows/rides: " + (snackPriority || "Not specified") + "\n";
+      text += "Shopping time: " + (shoppingTime || "Not specified") + "\n";
+      text += "\n";
+
+      text += "Overall priority order: " + (priorityOrder || "Not specified") + "\n";
+      text += "\n";
+
+      text += "Rides I really want:\n";
+      text += rides ? rides + "\n" : "(Not specified)\n";
+      text += "\n";
+
+      text += "Hard NOs / concerns:\n";
+      text += hardNos ? hardNos + "\n" : "(Not specified)\n";
+
+      document.getElementById("summary").value = text;
+      document.getElementById("summary").scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
