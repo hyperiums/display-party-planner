@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mickey’s Very Merry Christmas Party – Family Wish List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -19,6 +20,24 @@
     h1 {
       font-size: 1.7rem;
       text-align: center;
+    }
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .top-nav a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: #e5edff;
+      color: #1d4ed8;
+    }
+    .top-nav a:hover {
+      background: #d1ddff;
     }
     .card {
       background: #fff;
@@ -47,6 +66,9 @@
       border: 1px solid #ccc;
       font-size: 0.95rem;
     }
+    textarea {
+      resize: vertical;
+    }
     .inline-options {
       display: flex;
       flex-wrap: wrap;
@@ -62,8 +84,8 @@
     }
     .rating-row {
       border-top: 1px solid #eee;
-      padding-top: 0.5rem;
-      margin-top: 0.5rem;
+      padding-top: 0.6rem;
+      margin-top: 0.6rem;
     }
     .rating-row:first-of-type {
       border-top: none;
@@ -76,7 +98,22 @@
     .rating-description {
       font-size: 0.85rem;
       color: #555;
-      margin: 0.15rem 0 0.25rem;
+      margin: 0.2rem 0 0.25rem;
+    }
+    .rating-meta {
+      font-size: 0.8rem;
+      color: #444;
+      margin-bottom: 0.2rem;
+    }
+    .rating-meta span {
+      margin-right: 0.7rem;
+    }
+    .rating-meta .meta-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-right: 0.2rem;
     }
     .rating-controls {
       display: flex;
@@ -86,11 +123,20 @@
     }
     .rating-controls select {
       width: auto;
-      min-width: 130px;
+      min-width: 150px;
     }
-    .rating-label-scale {
-      font-size: 0.8rem;
+    .note {
+      font-size: 0.85rem;
       color: #555;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.05rem 0.5rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+      margin-left: 0.4rem;
     }
     button {
       cursor: pointer;
@@ -116,23 +162,22 @@
       font-family: "SF Mono", Menlo, Consolas, monospace;
       font-size: 0.9rem;
     }
-    .note {
-      font-size: 0.85rem;
-      color: #555;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 0.05rem 0.5rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #3730a3;
-      margin-left: 0.4rem;
+    .section-anchor {
+      scroll-margin-top: 70px;
     }
   </style>
 </head>
 <body>
   <h1>Mickey’s Very Merry Christmas Party 2025 – Family Wish List</h1>
+
+  <div class="top-nav">
+    <a href="#about">About You</a>
+    <a href="#shows">Shows & Nighttime</a>
+    <a href="#characters">Characters</a>
+    <a href="#dance">Dance & Atmosphere</a>
+    <a href="#treats">Treats & Merch</a>
+    <a href="#priorities">Big Picture</a>
+  </div>
 
   <div class="card">
     <p>
@@ -140,10 +185,14 @@
       during the party. When you’re done, click
       <strong>“Generate Summary”</strong> and send the text to Dad.
     </p>
+    <p class="note">
+      Scale for ratings: <strong>1</strong> = Don’t care, <strong>3</strong> = Nice if it fits, <strong>5</strong> = MUST DO.
+      Times are based on recent 2025 schedules (may vary slightly by night).
+    </p>
   </div>
 
   <!-- BASIC INFO -->
-  <div class="card">
+  <div class="card section-anchor" id="about">
     <h2>About You</h2>
     <div class="field-group">
       <label for="name">Your name</label>
@@ -176,10 +225,11 @@
   </div>
 
   <!-- BIG SHOWS -->
-  <div class="card">
+  <div class="card section-anchor" id="shows">
     <h2>Big Shows & Nighttime Spectaculars</h2>
-    <p class="note">For each thing, choose how important it is to you.<br>
-      1 = Don’t care, 3 = Nice if it fits, 5 = MUST DO
+    <p class="note">
+      Official party hours are roughly <strong>7:00 pm – midnight</strong>. Party guests can enter as early as
+      <strong>4:00 pm</strong>. :contentReference[oaicite:1]{index=1}
     </p>
 
     <div class="rating-row rating-item" data-id="shows_fireworks">
@@ -187,9 +237,14 @@
         Minnie’s Wonderful Christmastime Fireworks
         <span class="badge">10:00 pm</span>
       </div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Showtimes</span>10:00 pm (party nights)</span>
+        <span><span class="meta-label">Where</span>Cinderella Castle hub</span>
+        <span><span class="meta-label">Crowds</span>Very high; arrive 20–30 min early</span>
+      </div>
       <div class="rating-description">
-        Holiday fireworks over Cinderella Castle with Christmas music and projections.
-        Usually need to be in place ~20–30 minutes early.
+        Holiday fireworks over Cinderella Castle with projections and Christmas music. This is the big
+        nighttime cap for the party. :contentReference[oaicite:2]{index=2}
       </div>
       <div class="rating-controls">
         <label>
@@ -211,9 +266,14 @@
         Mickey’s Once Upon a Christmastime Parade
         <span class="badge">8:30 & 11:00 pm</span>
       </div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Showtimes</span>8:30 pm & 11:00 pm</span>
+        <span><span class="meta-label">Where</span>Main Street U.S.A. parade route</span>
+        <span><span class="meta-label">Tip</span>2nd parade is usually less crowded</span>
+      </div>
       <div class="rating-description">
-        Christmas parade with toy soldiers, gingerbread, Disney characters and Santa.
-        30–60 minutes waiting if we want a front-row spot.
+        Toy soldiers, reindeer, gingerbread, classic Disney characters in holiday outfits, and Santa.
+        Smells, music, and lights make this a “core party” experience. :contentReference[oaicite:3]{index=3}
       </div>
       <div class="rating-controls">
         <label>
@@ -234,8 +294,14 @@
       <div class="rating-title">
         Mickey’s Most Merriest Celebration (Castle Stage Show)
       </div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Showtimes</span>~7:40, 9:25, 10:35, 11:55 pm</span>
+        <span><span class="meta-label">Where</span>Cinderella Castle stage</span>
+        <span><span class="meta-label">Crowds</span>Fills, but easier than parade/fireworks</span>
+      </div>
       <div class="rating-description">
-        Music and dancing with Mickey, Minnie and friends on the castle stage. A few showtimes.
+        High-energy live show with Mickey, Minnie and friends singing and dancing through holiday songs
+        on the castle stage. Multiple showtimes make it easier to fit in. :contentReference[oaicite:4]{index=4}
       </div>
       <div class="rating-controls">
         <label>
@@ -256,8 +322,13 @@
       <div class="rating-title">
         Frozen Holiday Surprise (Castle Lighting)
       </div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Showtimes</span>~6:15 pm (pre-party) & 8:15 pm</span>
+        <span><span class="meta-label">Where</span>Cinderella Castle stage</span>
+      </div>
       <div class="rating-description">
-        Short “Frozen” show where Elsa lights the castle in icy lights.
+        Short “Frozen” show where Anna, Elsa and friends light up the castle in icy winter lights.
+        Great for kids who love Frozen; the 8:15 pm show is during the party. :contentReference[oaicite:5]{index=5}
       </div>
       <div class="rating-controls">
         <label>
@@ -278,8 +349,14 @@
       <div class="rating-title">
         Snowfall on Main Street, U.S.A.
       </div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>Intermittently in the evening</span>
+        <span><span class="meta-label">Where</span>Main Street U.S.A.</span>
+        <span><span class="meta-label">Wait</span>No line; just walk and enjoy</span>
+      </div>
       <div class="rating-description">
-        “Snow” on Main Street at times during the night; no line, just atmosphere.
+        “Snow” falls on Main Street with holiday music and lights. No waiting needed—this is pure
+        atmosphere and photos.
       </div>
       <div class="rating-controls">
         <label>
@@ -298,18 +375,25 @@
   </div>
 
   <!-- CHARACTERS -->
-  <div class="card">
+  <div class="card section-anchor" id="characters">
     <h2>Characters & Photos</h2>
-    <p class="note">Again, 1 = Don’t care, 3 = Nice if it fits, 5 = MUST DO.</p>
-
-    <!-- I’ll include a good subset so this stays readable; you can add/remove items easily. -->
+    <p class="note">
+      Most character sets meet throughout the party from about <strong>7:00 pm – midnight</strong>,
+      sometimes starting a bit earlier. Many of these are “rare” pairings for planners’ purposes. :contentReference[oaicite:6]{index=6}
+    </p>
 
     <h3>Super Popular / Long-Line Characters</h3>
 
     <div class="rating-row rating-item" data-id="char_jack_sally">
       <div class="rating-title">Jack Skellington & Sally (very long line)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Town Square Theater</span>
+        <span><span class="meta-label">Est. wait</span>90–180 min if not early</span>
+        <span><span class="meta-label">Popularity</span>Extreme / planner-level priority</span>
+      </div>
       <div class="rating-description">
-        Nightmare Before Christmas duo. Often 1.5–3 hour waits if we don’t line up early.
+        Nightmare Before Christmas duo in their holiday looks. This is usually the longest line
+        of the party and needs serious commitment if you pick it.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -327,8 +411,14 @@
 
     <div class="rating-row rating-item" data-id="char_santa">
       <div class="rating-title">Santa Claus – Santa’s Christmas Carnival</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Storybook Circus (North Pole tent)</span>
+        <span><span class="meta-label">Est. wait</span>30–60 min</span>
+        <span><span class="meta-label">Popularity</span>Very high, especially early</span>
+      </div>
       <div class="rating-description">
-        Meet Santa in a North Pole-style tent in Storybook Circus. Often 30–60 minutes.
+        Traditional Santa meet in a themed North Pole area in Storybook Circus—great for the
+        “real Santa” photo for the year.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -346,8 +436,13 @@
 
     <div class="rating-row rating-item" data-id="char_pooh_group">
       <div class="rating-title">Pooh, Tigger, Piglet & Eeyore (all four together)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Near The Many Adventures of Winnie the Pooh</span>
+        <span><span class="meta-label">Est. wait</span>45–60 min</span>
+      </div>
       <div class="rating-description">
-        Hundred Acre Wood friends in winter scarves by the Pooh ride. Often ~45–60 minutes.
+        All four Hundred Acre Wood friends together in winter scarves—super cute photos, especially
+        for younger kids.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -365,8 +460,12 @@
 
     <div class="rating-row rating-item" data-id="char_ariel_eric">
       <div class="rating-title">Ariel & Prince Eric</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Near Under the Sea – Journey of the Little Mermaid</span>
+        <span><span class="meta-label">Est. wait</span>45–60 min</span>
+      </div>
       <div class="rating-description">
-        Ariel in her green dress with rare Prince Eric. Often 45–60 minutes.
+        Ariel in her dress with the rarely-seen Prince Eric; great for Little Mermaid fans.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -384,8 +483,13 @@
 
     <div class="rating-row rating-item" data-id="char_belle_xmas">
       <div class="rating-title">Belle in her Christmas gown</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Maurice’s Cottage (near Enchanted Tales with Belle)</span>
+        <span><span class="meta-label">Est. wait</span>30–60 min</span>
+      </div>
       <div class="rating-description">
-        Belle in a special maroon winter dress at Maurice’s cottage. ~30–60 minutes.
+        Belle in a special winter/Christmas gown—this version is party-specific and quite popular
+        with Beauty and the Beast fans.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -403,8 +507,12 @@
 
     <div class="rating-row rating-item" data-id="char_mirabel_bruno">
       <div class="rating-title">Mirabel & Bruno (Encanto)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Fairytale Garden</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min</span>
+      </div>
       <div class="rating-description">
-        Mirabel with Bruno at Fairytale Garden. ~20–40 minutes.
+        Encanto meet with Mirabel and rare Bruno. Very on-trend for kids who love Encanto.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -424,8 +532,12 @@
 
     <div class="rating-row rating-item" data-id="char_anna_elsa">
       <div class="rating-title">Anna & Elsa</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Princess Fairytale Hall</span>
+        <span><span class="meta-label">Est. wait</span>20–45 min (shorter late)</span>
+      </div>
       <div class="rating-description">
-        Inside Princess Fairytale Hall in winter outfits. ~20–45 minutes.
+        Sisters from Frozen in winter outfits. Great indoor meet if you’re already near the castle.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -443,8 +555,12 @@
 
     <div class="rating-row rating-item" data-id="char_cindy_charming">
       <div class="rating-title">Cinderella & Prince Charming</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Princess Fairytale Hall</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min</span>
+      </div>
       <div class="rating-description">
-        In Princess Fairytale Hall. ~20–40 minutes.
+        Classic royal couple meet-and-greet in an air-conditioned indoor setting.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -462,8 +578,12 @@
 
     <div class="rating-row rating-item" data-id="char_rapunzel_flynn">
       <div class="rating-title">Rapunzel & Flynn Rider</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Princess Fairytale Hall</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min</span>
+      </div>
       <div class="rating-description">
-        In Princess Fairytale Hall. ~20–40 minutes.
+        Tangled duo; Flynn is rarer, so this is nice if your crew likes the movie.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -481,8 +601,12 @@
 
     <div class="rating-row rating-item" data-id="char_snow_aurora_princes">
       <div class="rating-title">Snow White & Prince / Aurora & Prince Phillip</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Near castle wall</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min</span>
+      </div>
       <div class="rating-description">
-        One line for two royal couples near the castle wall. ~20–40 minutes.
+        Two royal couples in one line; good value if you like the classic princesses.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -502,8 +626,12 @@
 
     <div class="rating-row rating-item" data-id="char_mickey_minnie">
       <div class="rating-title">Mickey & Minnie in holiday outfits</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Town Square Theater</span>
+        <span><span class="meta-label">Est. wait</span>15–60 min (shorter later)</span>
+      </div>
       <div class="rating-description">
-        Town Square Theater, indoors. 15–60 minutes depending on time.
+        Indoor meet in matching party-specific Christmas outfits—good for the “one big family photo.”
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -521,8 +649,12 @@
 
     <div class="rating-row rating-item" data-id="char_silly_sideshow">
       <div class="rating-title">Minnie, Daisy, Donald & Scrooge (one line)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Storybook Circus indoor meet</span>
+        <span><span class="meta-label">Est. wait</span>30–45 min</span>
+      </div>
       <div class="rating-description">
-        Storybook Circus indoor meet. One line for four characters. ~30–45 minutes.
+        Four classic characters in festive outfits. Indoor queue is a plus if it’s hot or rainy.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -540,8 +672,12 @@
 
     <div class="rating-row rating-item" data-id="char_moana">
       <div class="rating-title">Moana</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Adventureland (near Tiki Room)</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min (shorter late)</span>
+      </div>
       <div class="rating-description">
-        Near Tiki Room in Adventureland. ~20–40 minutes (shorter late).
+        Adventureland meet with Moana; can sometimes be a quicker line if timed well.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -559,8 +695,12 @@
 
     <div class="rating-row rating-item" data-id="char_aladdin_group">
       <div class="rating-title">Aladdin / Abu / Jasmine / Genie (rotating pairs)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Adventureland</span>
+        <span><span class="meta-label">Est. wait</span>30–60 min</span>
+      </div>
       <div class="rating-description">
-        Adventureland meet where pairs rotate. ~30–60 minutes.
+        One line; different Aladdin characters rotate in and out, which makes it fun but a little unpredictable.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -578,8 +718,12 @@
 
     <div class="rating-row rating-item" data-id="char_stitch">
       <div class="rating-title">Stitch in a holiday shirt</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Tomorrowland</span>
+        <span><span class="meta-label">Est. wait</span>20–45 min</span>
+      </div>
       <div class="rating-description">
-        Tomorrowland. ~20–45 minutes.
+        Chaos gremlin in festive gear. Good for kids who love Stitch and Tomorrowland vibes.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -597,8 +741,12 @@
 
     <div class="rating-row rating-item" data-id="char_tiana_naveen">
       <div class="rating-title">Tiana & Naveen</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Liberty Square gazebo</span>
+        <span><span class="meta-label">Est. wait</span>20–40 min</span>
+      </div>
       <div class="rating-description">
-        Liberty Square gazebo. ~20–40 minutes.
+        Charming bayou couple meet in Liberty Square with pretty nighttime lighting.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -616,8 +764,13 @@
 
     <div class="rating-row rating-item" data-id="char_wonderland">
       <div class="rating-title">Alice / White Rabbit / Tweedles</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Near Mad Tea Party</span>
+        <span><span class="meta-label">Est. wait</span>20–60 min</span>
+      </div>
       <div class="rating-description">
-        Wonderland characters near Mad Tea Party. ~20–60 minutes.
+        Wonderland characters including rare White Rabbit and Tweedle Dee/Dum. Fun if someone in the
+        family loves Alice.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -635,8 +788,13 @@
 
     <div class="rating-row rating-item" data-id="char_roaming">
       <div class="rating-title">Roaming characters (Santa Goofy, Country Bears, etc.)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">Where</span>Around Frontierland, Main Street & more</span>
+        <span><span class="meta-label">Est. wait</span>Usually none</span>
+      </div>
       <div class="rating-description">
-        Characters you might bump into for quick photos. Usually no real line.
+        Characters that wander or pop up in small sets. Great for quick “grab the moment” photos with
+        almost no waiting.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -659,13 +817,19 @@
   </div>
 
   <!-- DANCE PARTIES & CHILL STUFF -->
-  <div class="card">
+  <div class="card section-anchor" id="dance">
     <h2>Dance Parties & Low-Line Fun</h2>
 
     <div class="rating-row rating-item" data-id="fun_club_tinsel">
       <div class="rating-title">Club Tinsel Dance Party (Tomorrowland)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>7:00 pm – midnight (party)</span>
+        <span><span class="meta-label">Where</span>Rockettower Plaza Stage, Tomorrowland</span>
+        <span><span class="meta-label">Wait</span>No real line; jump in/out</span>
+      </div>
       <div class="rating-description">
-        Outdoor dance party with DJ and characters. No wait; just jump in.
+        High-energy outdoor dance party with a DJ and characters like Judy Hopps, Nick Wilde and
+        others popping in. Great way to burn energy without committing to a queue. :contentReference[oaicite:7]{index=7}
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -683,8 +847,14 @@
 
     <div class="rating-row rating-item" data-id="fun_disney_junior">
       <div class="rating-title">Disney Junior Jingle Jam (Cosmic Ray’s, indoors)</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>7:00 pm – midnight</span>
+        <span><span class="meta-label">Where</span>Cosmic Ray’s Starlight Café</span>
+        <span><span class="meta-label">Wait</span>Come and go freely</span>
+      </div>
       <div class="rating-description">
-        Indoor dance party for younger kids with Disney Junior characters.
+        Indoor dance party aimed at younger kids with Disney Junior pals and holiday music.
+        Nice break from weather and crowds. :contentReference[oaicite:8]{index=8}
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -702,8 +872,13 @@
 
     <div class="rating-row rating-item" data-id="fun_exploring">
       <div class="rating-title">Just walking around enjoying lights, music, and “snow”</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>All evening</span>
+        <span><span class="meta-label">Where</span>All over Magic Kingdom</span>
+      </div>
       <div class="rating-description">
-        Time to explore, look at decorations, and take casual photos without rushing.
+        Time specifically set aside just to soak in the decorations, music, and ambience,
+        and to grab casual family photos without rushing to a line.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -721,13 +896,18 @@
   </div>
 
   <!-- TREATS & MERCH -->
-  <div class="card">
+  <div class="card section-anchor" id="treats">
     <h2>Treats, Food & Merch</h2>
 
     <div class="rating-row rating-item" data-id="treats_free">
       <div class="rating-title">Free cookies & hot cocoa stations</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>Throughout the party</span>
+        <span><span class="meta-label">Where</span>Multiple locations around park</span>
+      </div>
       <div class="rating-description">
-        Complimentary cookies and hot chocolate for party guests.
+        Complimentary cookies and hot chocolate included with your party ticket—simple but very
+        “MVMCP-core” and easy to slot in between other activities. :contentReference[oaicite:9]{index=9}
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -745,8 +925,13 @@
 
     <div class="rating-row rating-item" data-id="treats_special">
       <div class="rating-title">Special party-only snacks</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>Mostly 7:00 pm – midnight (some all day)</span>
+        <span><span class="meta-label">Where</span>Quick-service spots across the park</span>
+      </div>
       <div class="rating-description">
-        Limited-time Christmas foods (cupcakes, sandwiches, specialty drinks).
+        Limited-time food like holiday burgers, churros, specialty drinks and cold brew variations.
+        These can take time if lines are long, but can be memorable “one-night-only” items. :contentReference[oaicite:10]{index=10}
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -773,8 +958,13 @@
 
     <div class="rating-row rating-item" data-id="merch">
       <div class="rating-title">Party-exclusive merchandise</div>
+      <div class="rating-meta">
+        <span><span class="meta-label">When</span>From 4:00 pm entry through end of night</span>
+        <span><span class="meta-label">Where</span>Main Street & select shops</span>
+      </div>
       <div class="rating-description">
-        Special shirts, pins, ornaments and more only sold during the party.
+        Event-dated shirts, pins, ornaments and more that are only sold during MVMCP nights.
+        Shopping can eat time, so it’s helpful to know how much each person cares.
       </div>
       <div class="rating-controls">
         <label>Importance:
@@ -801,7 +991,7 @@
   </div>
 
   <!-- PRIORITIES & RIDES -->
-  <div class="card">
+  <div class="card section-anchor" id="priorities">
     <h2>Big Picture Priorities</h2>
 
     <div class="field-group">
@@ -853,7 +1043,6 @@
       const hardNos = document.getElementById("hardNos").value.trim();
       const topChars = document.getElementById("topCharacters").value.trim();
 
-      // Collect all rating items
       const ratingItems = document.querySelectorAll(".rating-item");
       const ratings = [];
       ratingItems.forEach((item) => {
@@ -868,41 +1057,41 @@
       });
 
       let text = "";
-      text += "MVMCP 2025 Survey – " + name + "\n";
-      if (age) text += "Age: " + age + "\n";
-      text += "\n";
+      text += "MVMCP 2025 Survey – " + name + "\\n";
+      if (age) text += "Age: " + age + "\\n";
+      text += "\\n";
 
-      text += "Stay late until: " + (stayLate || "Not specified") + "\n";
-      text += "Max wait for one thing: " + (maxWait || "Not specified") + "\n";
-      text += "\n";
+      text += "Stay late until: " + (stayLate || "Not specified") + "\\n";
+      text += "Max wait for one thing: " + (maxWait || "Not specified") + "\\n";
+      text += "\\n";
 
-      text += "=== Activity Importance (1–5) ===\n";
+      text += "=== Activity Importance (1–5) ===\\n";
       if (ratings.length === 0) {
-        text += "(No ratings selected)\n";
+        text += "(No ratings selected)\\n";
       } else {
         ratings.forEach((r) => {
-          text += "- " + r + "\n";
+          text += "- " + r + "\\n";
         });
       }
-      text += "\n";
+      text += "\\n";
 
-      text += "Top 3 characters:\n";
-      text += topChars ? topChars + "\n" : "(Not specified)\n";
-      text += "\n";
+      text += "Top 3 characters:\\n";
+      text += topChars ? topChars + "\\n" : "(Not specified)\\n";
+      text += "\\n";
 
-      text += "Snacks vs shows/rides: " + (snackPriority || "Not specified") + "\n";
-      text += "Shopping time: " + (shoppingTime || "Not specified") + "\n";
-      text += "\n";
+      text += "Snacks vs shows/rides: " + (snackPriority || "Not specified") + "\\n";
+      text += "Shopping time: " + (shoppingTime || "Not specified") + "\\n";
+      text += "\\n";
 
-      text += "Overall priority order: " + (priorityOrder || "Not specified") + "\n";
-      text += "\n";
+      text += "Overall priority order: " + (priorityOrder || "Not specified") + "\\n";
+      text += "\\n";
 
-      text += "Rides I really want:\n";
-      text += rides ? rides + "\n" : "(Not specified)\n";
-      text += "\n";
+      text += "Rides I really want:\\n";
+      text += rides ? rides + "\\n" : "(Not specified)\\n";
+      text += "\\n";
 
-      text += "Hard NOs / concerns:\n";
-      text += hardNos ? hardNos + "\n" : "(Not specified)\n";
+      text += "Hard NOs / concerns:\\n";
+      text += hardNos ? hardNos + "\\n" : "(Not specified)\\n";
 
       document.getElementById("summary").value = text;
       document.getElementById("summary").scrollIntoView({ behavior: "smooth" });
